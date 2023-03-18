@@ -1,7 +1,9 @@
 # 44688-Data Analytics Capstone Project
 # FDIP (Fire Department Incident Prediction)
 Debra D. "DeeDee" Walker
+
 Northwest Missouri State University, Maryville MO 64468, USA
+
 S554373@nwmissouri.edu
 
 - ### Abstract
@@ -67,6 +69,6 @@ location information, resources utilized, and fire details if a fire was present
 - ### Future Work
 
 ## References
-FDNY: Incidents responded to by fire companies,
-https://data.cityofnewyork.us/Public-Safety/Incidents-Responded-to-by-Fire-
-Companies/tm6d-hbzd
+[1] FDNY: Incidents responded to by fire companies,
+https://data.cityofnewyork.us/Public-Safety/Incidents-Responded-to-by-Fire-Companies/tm6d-hbzd
+
