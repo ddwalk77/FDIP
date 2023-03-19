@@ -24,7 +24,7 @@ required by fire departments due to incident and location types, and addition-
 ally requiring the fastest response time, resources must be readily available.
 Resources include human resources and equipment. All incidents are logged by
 responding first responders through the National Fire Incident Reporting System
-by each fire company and some larger municipalities have made this information
+for each fire company and some larger municipalities have made this information
 readily available through their city website.
 
 - ### Goals of this Research
@@ -32,25 +32,28 @@ The goal of this research is to use municipality incident history to predict fut
 incident locations including type of location, and incident type, and required
 staffing. This information can be useful to departments for resource allocation
 allowing for proper staffing, equipment availability, and potential training op-
-portunities. Utilizing the historical incident date and time along with locations,
-we should be able to make predictions on future incident requirements. This in-
-formation can be used to strategically place staff. Knowing the type of location
-of the incident, high-rise apartment, single family home, manufacturing facility,
-etc., and the type of incident, allows for planning of equipment allocation and
-staffing requirements. An evaluation of the date and time patterns adds further
-value to staffing needs.
+portunities. Utilizing the historical incident date and time along with location
+information, staff utilization, and actions taken, we should be able to make
+predictions on future incident requirements. This information can be used to
+strategically place staff. Knowing the type of location of the incident, high-rise
+apartment, single family home, manufacturing facility, etc., and the type of inci-
+dent, allows for planning of equipment allocation and staffing requirements. An
+evaluation of the date and time patterns adds further value to staffing needs and
+predictions.
 
 ## Related Work
 Like crime prediction, fire prediction has been evaluated in many municipalities
 using several different algorithms for different purposes. FDNY has long been
 in the practice, like many urban fire departments, of temporarily relocating
 services between fire houses when they are overwhelmed by incidents to ensure
-availability for future anticipated incidents[2]. Data from the San Diego, CA area
+availability for future anticipated incidents[2]. This information was evaluated to
+formulate dynamic staffing using algorithms. Data from the San Diego, CA area
 was analyzed by a group out of Stanford for predicting emergency incidents as a
 project [4]. This work included detailed location information using latitude and
 longitude, weather, and demographics of the area. A project out of Vanderbilt
 evaluated data from Nashville, TN focusing on the incident severity as a main
-factor to prioritize resources, traffic factors, and arrival times [3].
+factor to prioritize resources, traffic factors, and response times [3]. This an area
+of interest that continues to develop.
 
 ## Data Collection
 Data was obtained for this project through the City of New York open data site
