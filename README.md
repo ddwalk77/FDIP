@@ -1,6 +1,6 @@
 # 44688-Data Analytics Capstone Project
-# FDIP (Fire Department Incident Prediction)
-![Fire Dept logo](https://github.com/ddwalk77/FDIP/blob/main/FD_logo.png "FD_logo")
+# FDIP (Fire Department Incident Prediction) ![Fire Dept logo](https://github.com/ddwalk77/FDIP/blob/main/FD_logo.png "FD_logo")
+
 Debra D. "DeeDee" Walker
 
 Northwest Missouri State University, Maryville MO 64468, USA
