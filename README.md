@@ -95,13 +95,17 @@ could be added to future work for further analysis.
 ## References
 [1] FDNY: Incidents responded to by fire companies,
 https://data.cityofnewyork.us/Public-Safety/Incidents-Responded-to-by-Fire-Companies/tm6d-hbzd
+
 [2] Kolesar, P., Walker, W.E.: An algorithm for the dynamic relocation of fire compa-
 nies. Operations research 22(2), 249–274 (1974)
+
 [3] Mukhopadhyay, A., Vorobeychik, Y.: Prioritized allocation of emergency responders
 based on a continuous-time incident prediction model. In: International Conference
 on Autonomous Agents and MultiAgent Systems (2017)
+
 [4] Romero, T., Barnes, Z., Cipollone, F.: Predicting emergency incidents in san diego.
 CS229. Stanford School of Engineering, Tech. Rep (2017)
+
 [5] USFA: National fire incident reporting system complete reference guide,
 https://www.usfa.fema.gov/downloads/pdf/nfirs/NFIRSC ompleteRef erenceGuide2015.pdf
 
