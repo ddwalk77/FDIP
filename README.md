@@ -20,46 +20,59 @@ medical calls as the paramedics operate through the same facility or are also fi
 fighters, and various rescue operations due to water, machinery, or chemical in-
 cidents to name a few. Incidents can vary in number of people needed, the type
 of services required, and equipment needed. Because of the diversity in services
-that are needed from fire departments due to incident and location types, and
-additionally requiring the fastest response time, resources must be readily avail-
-able. Resources include human resources and equipment. All incidents are logged
-through the National Fire Incident Reporting System by each fire company and
-some larger municipalities have made this information readily available through
-their city website.
+required by fire departments due to incident and location types, and addition-
+ally requiring the fastest response time, resources must be readily available.
+Resources include human resources and equipment. All incidents are logged by
+responding first responders through the National Fire Incident Reporting System
+by each fire company and some larger municipalities have made this information
+readily available through their city website.
 
 - ### Goals of this Research
 The goal of this research is to use municipality incident history to predict future
-incident locations, location type, incident type, and required resources. This
-information can be useful to departments for resource allocation allowing for
-proper staffing, equipment availability, and potential training opportunities. Uti-
-lizing the historical incident locations we should be able to make some predictions
-on future incident locations. This information can be used to strategically place
-staff. Knowing the type of location of the incident, high-rise apartment, single
-family home, manufacturing facility, etc., and the type of incident, allows for
-further resource planning of equipment allocation and further staffing require-
-ments. An evaluation of response time and staffing could also lead to a realization
-of potential training opportunities or specialty resources that potentially would
-add value.
+incident locations including type of location, and incident type, and required
+staffing. This information can be useful to departments for resource allocation
+allowing for proper staffing, equipment availability, and potential training op-
+portunities. Utilizing the historical incident date and time along with locations,
+we should be able to make predictions on future incident requirements. This in-
+formation can be used to strategically place staff. Knowing the type of location
+of the incident, high-rise apartment, single family home, manufacturing facility,
+etc., and the type of incident, allows for planning of equipment allocation and
+staffing requirements. An evaluation of the date and time patterns adds further
+value to staffing needs.
 
 ## Related Work
+Like crime prediction, fire prediction has been evaluated in many municipalities
+using several different algorithms for different purposes. FDNY has long been
+in the practice, like many urban fire departments, of temporarily relocating
+services between fire houses when they are overwhelmed by incidents to ensure
+availability for future anticipated incidents[2]. Data from the San Diego, CA area
+was analyzed by a group out of Stanford for predicting emergency incidents as a
+project [4]. This work included detailed location information using latitude and
+longitude, weather, and demographics of the area. A project out of Vanderbilt
+evaluated data from Nashville, TN focusing on the incident severity as a main
+factor to prioritize resources, traffic factors, and arrival times [3].
 
-## Methodology
+## Data Collection
+Data was obtained for this project through the City of New York open data site
+[1] and is structured. It consists of seventeen categorical data types, fifteen of
+which are nominal and two that are ordinal along with seven numerical data
+types, three of which are continuous and four that are discrete. As of the time
+of writing this, the data was last updated April 8, 2022, with the initial creation
+on July 27, 2016, and is updated annually. It includes all incidents overseen by
+the fire companies including fire, medical and non-fire emergencies. It contains
+twenty-four columns and 4.16 million rows. The data is available for download
+and is 1.02GB as a csv however it is available through an API endpoint. Data
+to be used from this dataset includes the incident type, actions taken, highest
+level of care provided, property use, incident date, borough, and zip code. The
+incident date will need further extraction to separate year, month and hour of
+the day as the relevant areas to evaluate. The current format is YYYY MMM
+DD HH:MM:SS XM.
 
-- ### Data Collection
-Data has been obtained through the City of New York open data site [1]. As
-of the time of writing this, the data was last updated April 8, 2022 with the
-initial creation on July 27, 2016 and is noted as updating annually. It includes all
-incidents handled through the fire companies including fire, medical and non-fire
-emergencies. It contains twenty-four columns and 4.16 million rows. The data is
-available for download and has an API available. This dataset contains the type
-of incident, the date and time of the incident, incident duration, actions taken,
-location information, resources utilized, and fire details if a fire was present.
+## Data Cleaning
 
-- ### Data Cleaning
+## Data Validation
 
-- ### Data Validation
-
-- ### Implementing ML Algorithms
+## Implementing ML Algorithms
 
 ## Results and Analysis
 
@@ -68,8 +81,25 @@ location information, resources utilized, and fire details if a fire was present
 - ### Limitations
 
 - ### Future Work
+Future work in this area that would add tremendous value would be incorpo-
+ration of other predictive factors that for a comprehensive prediction, such as
+crime, natural disaster, weather, and traffic data. It is also noted that more in-
+formation is collected by NFIRS than what is represented in this dataset [5].
+Collection of a full dataset from NFIRS would allow for more thorough exam-
+ination. Population is also relative to the data and is a considering factor that
+could be added to future work for further analysis.
 
 ## References
 [1] FDNY: Incidents responded to by fire companies,
 https://data.cityofnewyork.us/Public-Safety/Incidents-Responded-to-by-Fire-Companies/tm6d-hbzd
+[2] Kolesar, P., Walker, W.E.: An algorithm for the dynamic relocation of fire compa-
+nies. Operations research 22(2), 249–274 (1974)
+[3] Mukhopadhyay, A., Vorobeychik, Y.: Prioritized allocation of emergency responders
+based on a continuous-time incident prediction model. In: International Conference
+on Autonomous Agents and MultiAgent Systems (2017)
+[4] Romero, T., Barnes, Z., Cipollone, F.: Predicting emergency incidents in san diego.
+CS229. Stanford School of Engineering, Tech. Rep (2017)
+[5] USFA: National fire incident reporting system complete reference guide,
+https://www.usfa.fema.gov/downloads/pdf/nfirs/NFIRSC ompleteRef erenceGuide2015.pdf
+
 
