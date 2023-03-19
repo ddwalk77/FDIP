@@ -1,4 +1,6 @@
 # 44688-Data Analytics Capstone Project
+## 03/13/23 - 04/28/23
+
 # ![Fire Dept logo](https://github.com/ddwalk77/FDIP/blob/main/FD_logo.png "FD_logo") FDIP (Fire Department Incident Prediction)
 
 Debra D. "DeeDee" Walker
