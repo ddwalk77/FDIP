@@ -139,16 +139,17 @@ format.
 Once complete, the data was exported as a clean csv, fdip clean.csv and
 loaded on the project site. The final dataset contains 2,348,330 records with no
 null values and ten attributes. Final attributes and data types are:
-– IM INCIDENT KEY: object
-– INCIDENT DATE TIME: datetime64[ns]
-– UNITS ONSCENE: object
-– TOTAL INCIDENT DURATION: object
-– ZIP CODE: object
-– BOROUGH DESC: object
-– INCIDENT CATEGORY: object
-– LEVEL CATEGORY: object
-– Day of week: object
-– Hour of day: int64
+
+    – IM INCIDENT KEY: object
+    – INCIDENT DATE TIME: datetime64[ns]
+    – UNITS ONSCENE: object
+    – TOTAL INCIDENT DURATION: object
+    – ZIP CODE: object
+    – BOROUGH DESC: object
+    – INCIDENT CATEGORY: object
+    – LEVEL CATEGORY: object
+    – Day of week: object
+    – Hour of day: int64
 
 ## Data Validation
 
