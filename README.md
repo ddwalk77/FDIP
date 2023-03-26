@@ -25,19 +25,22 @@ of services required, and equipment needed. Because of the diversity in services
 required by fire departments due to incident and location types, and addition-
 ally requiring the fastest response time, resources must be readily available.
 Resources include human resources and equipment. All incidents are logged by
-responding first responders through the National Fire Incident Reporting Sys-
-tem [6] by each fire company and some larger municipalities have made this
-information readily available through their city website.
+responding first responders through the National Fire Incident Reporting System
+by each fire company and some larger municipalities have made this information
+readily available through their city website.
 
 - ### Goals of this Research
 The goal of this research is to use municipality incident history to predict future
-incident locations, incident type, and required staffing. This information can be
-useful to fire departments for resource allocation allowing for proper staffing and
-equipment availability. Utilizing the historical incident date and time along with
-location information, staff utilization, type of incident, and duration, we should
-be able to make predictions on future incident requirements. This information
-can be used to strategically place staff. An evaluation of the date and time
-patterns adds further value to staffing needs and predictions.
+incident locations including type of location, and incident type, and required
+staffing. This information can be useful to departments for resource allocation
+allowing for proper staffing, equipment availability, and potential training op-
+portunities. Utilizing the historical incident date and time along with locations,
+we should be able to make predictions on future incident requirements. This in-
+formation can be used to strategically place staff. Knowing the type of location
+of the incident, high-rise apartment, single family home, manufacturing facility,
+etc., and the type of incident, allows for planning of equipment allocation and
+staffing requirements. An evaluation of the date and time patterns adds further
+value to staffing needs.
 
 ## Related Work
 Like crime prediction, fire prediction has been evaluated in many municipalities
@@ -50,8 +53,7 @@ was analyzed by a group out of Stanford for predicting emergency incidents as a
 project [5]. This work included detailed location information using latitude and
 longitude, weather, and demographics of the area. A project out of Vanderbilt
 evaluated data from Nashville, TN focusing on the incident severity as a main
-factor to prioritize resources, along with traffic factors, and response times [3].
-This an area of interest that continues to develop.
+factor to prioritize resources, traffic factors, and arrival times [3].
 
 ## Data Collection
 Data was obtained for this project through the City of New York open data site
@@ -178,12 +180,10 @@ nies. Operations research 22(2), 249–274 (1974)
 [3] Mukhopadhyay, A., Vorobeychik, Y.: Prioritized allocation of emergency responders
 based on a continuous-time incident prediction model. In: International Conference
 on Autonomous Agents and MultiAgent Systems (2017)
-
-[4] NFIC: National Fire Information Council Incident type Cheat Sheet,
-https://www.nfic.org/docs/IncidentTypeCheatSheet.pdf
-
-[5] Romero, T., Barnes, Z., Cipollone, F.: Predicting emergency incidents in san diego.
+[4] Romero, T., Barnes, Z., Cipollone, F.: Predicting emergency incidents in san diego.
 CS229. Stanford School of Engineering, Tech. Rep (2017)
+[5] USFA: National fire incident reporting system complete reference guide,
+https://www.usfa.fema.gov/downloads/pdf/nfirs/NFIRSC ompleteRef erenceGuide2015.pdf
 
 [6] USFA: National fire incident reporting system,
 https://www.usfa.fema.gov/nfirs/
