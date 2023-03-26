@@ -151,6 +151,11 @@ Final attributes and data types are:
     – Day of week: object
     – Hour of day: int64
 
+Independent variables: ZIP CODE, BOROUGH DESC, INCIDENT DATE TIME
+(Day of week, Hour of day)
+Dependent variables: UNITS ONSCENE, TOTAL INCIDENT DURATION, IN-
+CIDENT CATEGORY, LEVEL CATEGORY
+
 ## Data Validation
 
 ## Implementing ML Algorithms
