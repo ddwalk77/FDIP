@@ -136,9 +136,9 @@ format.
 – BOROUGH DESC was not altered and includes the five boroughs: 1 - Manhattan,
 2 - Bronx, 3 - Staten Island, 4 - Brooklyn, 5 - Queens.
 
-Once complete, the data was exported as a clean csv, fdip clean.csv and
-loaded on the project site. The final dataset contains 2,348,330 records with no
-null values and ten attributes. Final attributes and data types are:
+Once complete, the data was exported as a clean csv, fdip clean.csv. 
+The final dataset contains 2,348,330 records with no null values and ten attributes. 
+Final attributes and data types are:
 
     – IM INCIDENT KEY: object
     – INCIDENT DATE TIME: datetime64[ns]
