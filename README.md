@@ -77,8 +77,8 @@ initial review led to the decision to only keep the following features: IM INCID
 INCIDENT TYPE DESC, INCIDENT DATE TIME, UNITS ONSCENE, HIGHEST LEVEL DESC,
 TOTAL INCIDENT DURATION, ACTION TAKEN1 DESC, PROPERTY USE DESC, ZIP CODE,
 BOROUGH DESC. The dataset was then loaded in to a Python pandas dataframe
-and all except the above features were dropped. From there each feature was
-handled as follows:
+and all except the above features were dropped and duplicates removed. From there each 
+feature was handled as follows:
 
 – IM INCIDENT KEY was not altered. This is a unique value for each incident
 and is not duplicated.
@@ -99,7 +99,7 @@ contain this value and INCIDENT TYPE DESC was dropped. Categories include:
 – INCIDENT DATE TIME was converted to datetime64[ns] and filtered for years
 2017-2021. The format is YYYY MMM DD HH:MM:SS XM. The day of the
 week and hour of the call were extracted and added as a feature, Day of week
-and Hour of day.
+with a corresponding number values, Month, and Hour of day.
 
 – Null values in UNITS ONSCENE were replaced by the mean and the feature
 was converted to an integer. Value counts revealed the need for categoriza-
@@ -134,28 +134,32 @@ rows were dropped as there were only nine records. Zip codes are in 5 digit
 format.
 
 – BOROUGH DESC was not altered and includes the five boroughs: 1 - Manhattan,
-2 - Bronx, 3 - Staten Island, 4 - Brooklyn, 5 - Queens.
+2 - Bronx, 3 - Staten Island, 4 - Brooklyn, 5 - Queens, however BOROUGH NUM was added.
 
 Once complete, the data was exported as a clean csv, fdip clean.csv. 
-The final dataset contains 2,348,330 records with no null values and ten attributes. 
+The final dataset contains 2,340,416 records with no null values and sixteen attributes. 
 Final attributes and data types are:
 
     – IM INCIDENT KEY: object
     – INCIDENT DATE TIME: datetime64[ns]
-    – UNITS ONSCENE: object
-    – TOTAL INCIDENT DURATION: object
+    – UNITS ONSCENE: int
+    – UNITS CATEGORY: object
+    – TOTAL INCIDENT DURATION: int
+    - INCIDENT_LENGTH: object
     – ZIP CODE: object
     – BOROUGH DESC: object
+    – BOROUGH NUM: int
     – INCIDENT CATEGORY: object
-    – LEVEL CATEGORY: object
+    – INCIDENT CATNUM: int
+    – LEVEL CATEGORY: int
     – Day of week: object
+    - DAY NUM: int
+    - MONTH: int
     – Hour of day: int64
 
-Independent variables: ZIP CODE, BOROUGH DESC, INCIDENT DATE TIME
-(Day of week, Hour of day)
+Independent variables: TBD
 
-Dependent variables: UNITS ONSCENE, TOTAL INCIDENT DURATION, IN-
-CIDENT CATEGORY, LEVEL CATEGORY
+Dependent variables: TBD
 
 ## Data Validation
 
