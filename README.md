@@ -15,19 +15,19 @@ S554373@nwmissouri.edu
 fire department · 911 dispatching · emergency · machine learning
 
 ## Introduction
-Fire departments are not only composed of fire fighters that fight fire, but EMT,
-paramedic, and rescue. They respond to a variety of calls through 911 dispatch-
-ing. They respond with the police department when needed, to vehicle accidents,
-medical calls as the paramedics operate through the same facility or are also fire
-fighters, and various rescue operations due to water, machinery, or chemical in-
-cidents to name a few. Incidents can vary in number of people needed, the type
-of services required, and equipment needed. Because of the diversity in services
-required by fire departments due to incident and location types, and addition-
-ally requiring the fastest response time, resources must be readily available.
-Resources include human resources and equipment. All incidents are logged by
-responding first responders through the National Fire Incident Reporting System
-by each fire company and some larger municipalities have made this information
-readily available through their city website.
+Fire departments are not only composed of fire fighters that fight fires, but EMT,
+paramedic, and rescue. They respond to a variety of calls through 911 dispatching
+They respond with the police department when needed, to vehicle accidents,
+medical calls as the paramedics operating through the same facility who are also
+fire fighters, and various rescue operations due to water, machinery, or chemical
+incidents to name a few. Incidents can vary in number of people needed,
+the type of services required, and necessary equipment. Because of the diversity 
+in services required by fire departments due to incident and location types,
+and additionally requiring the fastest response time, resources must be readily
+available. Resources include human resources and equipment. All incidents are
+logged through the National Fire Incident Reporting System [6] by responding
+first responders within each fire company and some larger municipalities have
+made this information readily available through their city website.
 
 - ### Goals of this Research
 The goal of this research is to use municipality incident history to predict future
