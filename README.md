@@ -31,16 +31,12 @@ made this information readily available through their city website.
 
 - ### Goals of this Research
 The goal of this research is to use municipality incident history to predict future
-incident locations including type of location, and incident type, and required
-staffing. This information can be useful to departments for resource allocation
-allowing for proper staffing, equipment availability, and potential training op-
-portunities. Utilizing the historical incident date and time along with locations,
-we should be able to make predictions on future incident requirements. This in-
-formation can be used to strategically place staff. Knowing the type of location
-of the incident, high-rise apartment, single family home, manufacturing facility,
-etc., and the type of incident, allows for planning of equipment allocation and
-staffing requirements. An evaluation of the date and time patterns adds further
-value to staffing needs.
+incident type and required staffing for each area. This information can be useful
+to fire departments for resource allocation allowing for proper staffing and equip-
+ment availability. For each area, utilizing the historical incident date and time,
+we should be able to make predictions on future incident requirements such as
+staff and equipment needs, type of incident, and duration. This information can
+be used to strategically place staff within the city in anticipation of an incident.
 
 ## Related Work
 Like crime prediction, fire prediction has been evaluated in many municipalities
