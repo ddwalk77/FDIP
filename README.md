@@ -73,16 +73,20 @@ initial review led to the decision to only keep the following features: IM INCID
 INCIDENT TYPE DESC, INCIDENT DATE TIME, UNITS ONSCENE, HIGHEST LEVEL DESC,
 TOTAL INCIDENT DURATION, ACTION TAKEN1 DESC, PROPERTY USE DESC, ZIP CODE,
 BOROUGH DESC. The dataset was then loaded in to a Python pandas dataframe
-and all except the above features were dropped and duplicates removed. From there each 
-feature was handled as follows:
+and all except the above features were dropped. From there each feature was
+handled as follows:
 
-– IM INCIDENT KEY was not altered. This is a unique value for each incident
-and is not duplicated.
+– IM INCIDENT KEY is a unique value for each incident however duplicate records
+were discovered and removed. This removed 7,915 records. This was complated
+after after filtering date by year.
 
-– INCIDENT TYPE DESC value counts revealed that this field needed to be cat-
-egorized. This was completed using the NFIC Incident type cheat sheet [4]
+– INCIDENT TYPE DESC value counts revealed that this field needed to be
+categorized. This was completed using the NFIC Incident type cheat sheet [4]
 where the series indicates the category. INCIDENT CATEGORY was created to
-contain this value and INCIDENT TYPE DESC was dropped. Categories include:
+contain this value and INCIDENT TYPE DESC was dropped with a number
+being assigned in a new feature, INCIDENT CATNUM.
+
+Categories include:
 • FIRE
 • OVERPRESSURE RUPTURE, EXPLOSION, OVERHEAT-NO FIRE
 • RESCUE & EMS
@@ -92,48 +96,51 @@ contain this value and INCIDENT TYPE DESC was dropped. Categories include:
 • FALSE ALARM FALSE CALL
 • SEVERE WEATHER & NATURAL DISASTER
 
-– INCIDENT DATE TIME was converted to datetime64[ns] and filtered for years
-2017-2021. The format is YYYY MMM DD HH:MM:SS XM. The day of the
-week and hour of the call were extracted and added as a feature, Day of week
-with a corresponding number values, Month, and Hour of day.
+- INCIDENT DATE TIME was converted to datetime64[ns] and filtered for years
+2017-2021. The format is YYYY MMM DD HH:MM:SS XM. The day of
+the week and hour of the call were extracted and added as new features,
+Day of week with a corresponding number value in DAY NUM, Month, and
+Hour of day.
 
 – Null values in UNITS ONSCENE were replaced by the mean and the feature
-was converted to an integer. Value counts revealed the need for categoriza-
-tion and seven categories were created and assigned ranging from one unit to
+was converted to an integer. Value counts revealed the need for categorization
+and seven categories were created and assigned ranging from one unit to
 seven or more units. There were 70,433 replacements made, 3%, with value
-of 2.
+of 2. An additional categorical feature was created, UNITS CATEGORY.
 
 – HIGHEST LEVEL DESC value counts also revealed the need to simplify and
-clean redundant data. Based on counts, the data was placed in seven cat-
-egories with one being a lower level incident and seven being the highest.
+clean redundant data. Based on counts, the data was placed in seven categories
+with one being a lower level incident and seven being the highest.
 LEVEL CATEGORY was created to contain this value. HIGHEST LEVEL DESC was
-then dropped as the new category replaced this value. Records with null val-
-ues were removed. This was 106 records which was .005%.
+then dropped as the new category replaced this value. Records with null
+values were removed. This was 106 records which was .005%.
 
 – TOTAL INCIDENT DURATION is in seconds so this value was converted to hours
 and rounded to two decimal places. From here, the data was categorized in
-to seven categories: <=15min, 15min-30min, 30min-45min, 45min-1hr, 1-
-2hr, 2-3hr, and 3hr>. Records with null values were removed. This was 622
+to seven categories: <=15min, 15min-30min, 30min-45min, 45min-1hr, 1-2hr,
+2-3hr, and 3hr>. Records with null values were removed. This was 621
 records which was .03%. The duration represents the time from the initial
-incident date time to when the scene was cleared.
+incident date time to when the scene was cleared. The new feature is
+INCIDENT LENGTH. The original feature was also kept in the converted float
+format.
 
 – ACTION TAKEN1 DESC value counts revealed that similar details that were
-represented in INCIDENT TYPE DESC. Due to the complexity and the simpli-
-fication through categorization, this feature was dropped.
+represented in INCIDENT TYPE DESC. Due to the complexity and the simplification
+through categorization, this feature was dropped.
 
 – Value counts on PROPERTY USE DESC revealed that the majority of the values
 are listed as undetermined so this feature was dropped.
 
-– Value counts on ZIP CODE revealed an invalid zip code 99999. This was re-
-placed with the highest count zip code per respective borough. Null zip code
-rows were dropped as there were only nine records. Zip codes are in 5 digit
-format.
+– Value counts on ZIP CODE revealed an invalid zip code 99999. This was replaced
+with the highest count zip code per respective borough. Null zip code rows
+were dropped as there were only nine records. Zip codes are in 5 digit format.
 
 – BOROUGH DESC was not altered and includes the five boroughs: 1 - Manhattan,
-2 - Bronx, 3 - Staten Island, 4 - Brooklyn, 5 - Queens, however BOROUGH NUM was added.
+2 - Bronx, 3 - Staten Island, 4 - Brooklyn, 5 - Queens, however BOROUGH NUM
+was added as a numerical feature.
 
-Once complete, the data was exported as a clean csv, fdip clean.csv. 
-The final dataset contains 2,340,416 records with no null values and sixteen attributes. 
+Once complete, the data was exported as a clean csv, fdip clean.csv. The final
+dataset contains 2,340,416 records with no null values and sixteen attributes.
 Final attributes and data types are:
 
     – IM INCIDENT KEY: object
@@ -153,9 +160,12 @@ Final attributes and data types are:
     - MONTH: int
     – Hour of day: int64
 
-Independent variables: TBD
+Independent variables: ZIP CODE, BOROUGH DESC, BOROUGH NUM,
+INCIDENT DATE TIME (Day of week, DAY NUM, Hour of day, Month)
 
-Dependent variables: TBD
+Dependent variables: UNITS ONSCENE, UNITS CATEGORY, TOTAL IN-
+CIDENT DURATION, INCIDENT LENGTH, INCIDENT CATEGORY, IN-
+CIDENT CATNUM, LEVEL CATEGORY
 
 ## Data Validation
 
