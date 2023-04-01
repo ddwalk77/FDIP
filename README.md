@@ -122,7 +122,7 @@ to seven categories: <=15min, 15min-30min, 30min-45min, 45min-1hr, 1-2hr,
 records which was .03%. The duration represents the time from the initial
 incident date time to when the scene was cleared. The new feature is
 INCIDENT LENGTH. The original feature was also kept in the converted float
-format.
+format. Two outlier records were removed.
 
 – ACTION TAKEN1 DESC value counts revealed that similar details that were
 represented in INCIDENT TYPE DESC. Due to the complexity and the simplification
@@ -140,7 +140,7 @@ were dropped as there were only nine records. Zip codes are in 5 digit format.
 was added as a numerical feature.
 
 Once complete, the data was exported as a clean csv, fdip clean.csv. The final
-dataset contains 2,340,416 records with no null values and sixteen attributes.
+dataset contains 2,340,414 records with no null values and sixteen attributes.
 Final attributes and data types are:
 
     – IM INCIDENT KEY: object
