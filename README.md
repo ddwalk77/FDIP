@@ -97,7 +97,7 @@ Categories include:
     • FALSE ALARM FALSE CALL
     • SEVERE WEATHER & NATURAL DISASTER
 
-- INCIDENT DATE TIME was converted to datetime64[ns] and filtered for years
+-INCIDENT DATE TIME was converted to datetime64[ns] and filtered for years
 2017-2021. The format is YYYY MMM DD HH:MM:SS XM. The day of
 the week and hour of the call were extracted and added as new features,
 Day of week with a corresponding number value in DAY NUM, Month, and
@@ -161,12 +161,12 @@ Final attributes and data types are:
     - MONTH: int
     – Hour of day: int64
 
-Independent variables: ZIP CODE, BOROUGH DESC, BOROUGH NUM,
-INCIDENT DATE TIME (Day of week, DAY NUM, Hour of day, Month)
+Independent variables: 
+ZIP CODE, BOROUGH DESC, BOROUGH NUM, INCIDENT DATE TIME (Day of week, DAY NUM, Hour of day, Month)
 
-Dependent variables: UNITS ONSCENE, UNITS CATEGORY, TOTAL IN-
-CIDENT DURATION, INCIDENT LENGTH, INCIDENT CATEGORY, IN-
-CIDENT CATNUM, LEVEL CATEGORY
+Dependent variables: 
+UNITS ONSCENE, UNITS CATEGORY, TOTAL INCIDENT DURATION, INCIDENT LENGTH, INCIDENT CATEGORY, 
+INCIDENT CATNUM, LEVEL CATEGORY
 
 ## Data Analysis
 
