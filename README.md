@@ -159,7 +159,7 @@ Final attributes and data types are:
     – Day of week: object
     - DAY NUM: int
     - MONTH: int
-    – Hour of day: int64
+    – Hour of day: int
 
 Independent variables: 
 ZIP CODE, BOROUGH DESC, BOROUGH NUM, INCIDENT DATE TIME (Day of week, DAY NUM, Hour of day, Month)
