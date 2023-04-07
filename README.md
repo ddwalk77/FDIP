@@ -179,31 +179,37 @@ The details can be viewed at https://github.com/ddwalk77/FDIP.
 – Analysis revealed that Brooklyn is the busiest BOROUGH DESC followed by
 Manhattan. The ZIP CODE with the highest incident count is 10029, which
 is in Manhattan [6]. The second largest incident count ZIP CODE is 10456,
-which is in the Bronx [6]. The map below demonstrates the incidents by
+which is in the Bronx [6]. The map demonstrates the incidents by
 ZIP CODE.
-<MAP>
+
 – The highest LEVEL CATEGORY is one which accounts for 99.35% of the incidents.
+
 – 49.69% of incidents occur between the 12:00 - 20:00 Hour of day which is
 37.50% of the day, with the highest volume being between 17:00 - 18:00.
 There is a gradual increase through the day that starts around the 05:00
 hour and peaks between 17:00 - 18:00 then begins to decline, cycling back
 through each day. When broken out per BOROUGH DESC, the peak time of
 17:00 - 18:00 does not change.
+
 – The two busiest Month are July & August. This is consistent across the
 BOROUGH DESC. There is variation of order from there depending on the
 BOROUGH DESC, but April & February are consistently the slowest Month.
+
 – The busiest Day of week is Friday and the slowest is Sunday. This is consistent
 across the BOROUGH DESC, but it does vary in between.
-6 D. Walker.
+
 – One unit responding is the highest count for UNITS ONSCENE, which 61.63%
 of incidents. It is consistent across the BOROUGH DESC, followed by two and
 three UNITS ONSCENE, then varies from there. Manhattan has the largest
 count of UNITS ONSCENE in a singular incident.
+
 – Incidents are resolved in less than 30 minutes 80.23% of the time. The largest
 TOTAL INCIDENT DURATION for singular incidents were in Brooklyn and the
 Bronx.
+
 – The most common INCIDENT CATEGORY is RESCUE & EMS followed by
 FALSE ALARM FALSE CALL. This is consistent across BOROUGH DESC.
+
 – Pearson correlation on numerical data indicates a correlation between the
 LEVEL CATEGORY and UNITS ONSCENE. Since the counts for both the UNITS ONSCENE
 and LEVEL CATEGORY were highest at one, this is not too insightful. We also
@@ -213,8 +219,10 @@ TOTAL INCIDENT DURATION which is further demonstrated in pair plots, scatter
 plots, and crosstabs. LEVEL CATEGORY and TOTAL INCIDENT DURATION
 also show a minor correlation. Since the LEVEL CATEGORY for level one was
 99.35%, this is not too insightful either.
+
 - Crosstabs of each bivariate combination possible did not reveal anything
 that it not indicated above.
+
 – Chi-square & Cramer’s V on categorical data revealed a moderate relationship
 between INCIDENT CATEGORY and UNITS CATEGORY. Cramer’s V was .32.
 
