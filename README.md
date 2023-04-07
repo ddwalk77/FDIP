@@ -220,7 +220,7 @@ plots, and crosstabs. LEVEL CATEGORY and TOTAL INCIDENT DURATION
 also show a minor correlation. Since the LEVEL CATEGORY for level one was
 99.35%, this is not too insightful either.
 
-- Crosstabs of each bivariate combination possible did not reveal anything
+-Crosstabs of each bivariate combination possible did not reveal anything
 that it not indicated above.
 
 – Chi-square & Cramer’s V on categorical data revealed a moderate relationship
