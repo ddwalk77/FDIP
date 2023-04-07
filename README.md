@@ -173,7 +173,7 @@ To evaluate the dataset, a univariate analysis was completed for each feature
 followed by a bivariate or multivariate to determine relationships. Univariate
 analysis consisted of value counts, bar charts of value counts, bar charts of relative
 frequency, and box plots. Bivariate and multivariate analysis consisted of
-scatterplots, crosstabs, lineplots, pearson correlation, Chi-square, & Cramer’s V.
+scatterplots, crosstabs, lineplots, Pearson correlation, Chi-square, & Cramer’s V.
 The details can be viewed at https://github.com/ddwalk77/FDIP.
 
 – Analysis revealed that Brooklyn is the busiest BOROUGH DESC followed by
