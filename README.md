@@ -255,18 +255,19 @@ and recall vs weighted or micro. A display of the confusion matrix for each algo
 is available in addition to a classification report within the links provided.
 
 Details on the hyperparameters used for each algorithm are:
-– Random Forest multi was implemented with a max depth of 6, otherwise
+
+- Random Forest multi was implemented with a max depth of 6, otherwise
 defaults were in place. Random Forest on a single label was further refined
 to a max depth of 10 and n estimators of 150. Random Forest details
 can be viewed in RandomForest.ipynb. Random Forest multi was revisited with max depth 
 of 20 and n estimators of 200.
 
-– MLP multi was implemented with default settings. MLP on a single label
+- MLP multi was implemented with default settings. MLP on a single label
 was further refined to activation ’tanh’, solver ’adam’, alpha .05, and
 early stopping equal to True. MLP details can be viewed here: https://
 github.com/ddwalk77/FDIP/blob/main/MLPClassifier.ipynb.
 
-– SGD multi was implemented with early stopping equal to True and loss
+- SGD multi was implemented with early stopping equal to True and loss
 ’modified huber’, otherwise defaults were in place. SGD on a single label was
 further refined to loss ’log loss’, and early stopping equal to True. SGD details
 can be viewed in SGDClassifier.ipynb.
