@@ -230,6 +230,59 @@ In summary, lots of descriptive information was extracted, however there is only
 a weak or non existent relationship between the independent and dependent variables. 
 
 ## Implementing ML Algorithms
+Algorithms were selected based on their usability and performance with categorical
+and uncorrelated data. Random Forest, MLPClassifier (Multi-layer Perceptron
+classifier), and SGDClassifier (Stochastic Gradient Descent) were implemented
+to further determine if there were any hidden relationships and attempt
+to predict INCIDENT CATEGORY, INCIDENT LENGTH, & UNITS CATEGORY
+using ZIP CODE, BOROUGH NUM, MONTH, Hour of day, & DAY NUM.
+The data was split into an 80:20 train:test split, making the training set 1,872,331
+rows and the test set 468,083 rows. Initially, a MultiOutputClassifier was implemented
+on each algorithm since the goal was to predict three labels. This
+information can be viewed in the ML Alg MultiOut.ipynb. The accuracy of each algorithm
+on multi output was very low so each algorithm was evaluated further for single output 
+to examine the possibilities, if any.
+Random Forest was evaluated for a single label first due to its ability to
+extract feature importance. From this information, algorithms were further tailored to 
+the top two target features, ZIP CODE and Hour of day. Each algorithm being implemented 
+for each label individually, utilizing the top two target features. The same random
+state of 50 was used in each implementation. Accuracy, F1, precision, and recall
+were collected on the training set and summarized for evaluation. Since this is
+categorical data, certain other metrics are not available. The data is skewed for
+certain categories leading to the selection of the macro average for F1, precision,
+and recall vs weighted or micro. A display of the confusion matrix for each algorithm
+is available in addition to a classification report within the links provided.
+Details on the hyperparameters used for each algorithm are:
+– Random Forest multi was implemented with a max depth of 6, otherwise
+defaults were in place. Random Forest on a single label was further refined
+to a max depth of 10 and n estimators of 150. Random Forest details
+can be viewed in RandomForest.ipynb. Random Forest multi was revisited with max depth 
+of 20 and n estimators of 200.
+– MLP multi was implemented with default settings. MLP on a single label
+was further refined to activation ’tanh’, solver ’adam’, alpha .05, and
+early stopping equal to True. MLP details can be viewed here: https://
+github.com/ddwalk77/FDIP/blob/main/MLPClassifier.ipynb.
+– SGD multi was implemented with early stopping equal to True and loss
+’modified huber’, otherwise defaults were in place. SGD on a single label was
+further refined to loss ’log loss’, and early stopping equal to True. SGD details
+can be viewed in SGDClassifier.ipynb.
+The preliminary indication from implementations on the test data as outlined
+above was that Random Forest was the best performer. Because of this, Random
+Forest with multi-output was revisited with the two target features only
+and refined hyperparemters as outlined above, with the intention of finding a
+good fit. This is available in RandomForestMulti.ipynb. The increase in performance was 
+negligible.
+In summary, as expected from the data analysis and exploration, no further
+insights were gained and accuracy is low. Results are no better than a guess of
+the top value counts which is demonstrated in RandomForest.ipynb in the confusion matrix
+predicting UNITS CATEGORY using the top two features. The confusion matrix demonstrates 
+that the algorithm is ignoring all categories except the top value count category of one. 
+As we revealed in the data analysis section, this accounts for 61.63% of the information. 
+This algorithm has an accuracy of 61.64%. It is simply matching by default. Since we are 
+not able to find a good fit due to the skew of the categories, lack of correlation, and 
+randomness of the data, test data implementation was abandoned, as a good fit could not be 
+found on the training set. A summary of the results from all the algorithms implemented is 
+in Results.ipynb
 
 ## Results and Analysis
 
