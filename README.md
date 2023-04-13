@@ -275,7 +275,7 @@ can be viewed in SGDClassifier.ipynb.
 The preliminary indication from implementations on the test data as outlined
 above was that Random Forest was the best performer. Because of this, Random
 Forest with multi-output was revisited with the two target features only
-and refined hyperparemters as outlined above, with the intention of finding a
+and refined hyperparameters as outlined above, with the intention of finding a
 good fit. This is available in RandomForestMulti.ipynb. The increase in performance was 
 negligible.
 
