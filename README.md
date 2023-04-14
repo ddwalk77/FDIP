@@ -9,6 +9,8 @@ Northwest Missouri State University, Maryville MO 64468, USA
 
 S554373@nwmissouri.edu
 
+Report: https://www.overleaf.com/read/trcfgsnvjqds
+
 - ### Abstract
 
 - ### Keywords
@@ -69,12 +71,12 @@ MMM DD HH:MM:SS XM.
 
 ## Data Cleaning
 Initially the data was evaluated on the website from where it was obtained. The
-initial review led to the decision to only keep the following features: IM INCIDENT KEY,
-INCIDENT TYPE DESC, INCIDENT DATE TIME, UNITS ONSCENE, HIGHEST LEVEL DESC,
-TOTAL INCIDENT DURATION, ACTION TAKEN1 DESC, PROPERTY USE DESC, ZIP CODE,
-BOROUGH DESC. The dataset was then loaded in to a Python pandas dataframe
-and all except the above features were dropped. From there each feature was
-handled as follows:
+initial review led to the decision to only keep the following features: 
+IM INCIDENT KEY, INCIDENT TYPE DESC, INCIDENT DATE TIME, UNITS ONSCENE, 
+HIGHEST LEVEL DESC, TOTAL INCIDENT DURATION, ACTION TAKEN1 DESC, PROPERTY USE DESC, 
+ZIP CODE, BOROUGH DESC. The dataset was then loaded in to a Python pandas dataframe
+and all except the above features were dropped. From there each feature was handled 
+as follows:
 
 – IM INCIDENT KEY is a unique value for each incident however duplicate records
 were discovered and removed. This removed 7,915 records. This was complated
@@ -162,19 +164,20 @@ Final attributes and data types are:
     – Hour of day: int
 
 Independent variables: 
-ZIP CODE, BOROUGH DESC, BOROUGH NUM, INCIDENT DATE TIME (Day of week, DAY NUM, Hour of day, Month)
+ZIP CODE, BOROUGH DESC, BOROUGH NUM, Day of week, DAY NUM, Hour of day, Month
 
 Dependent variables: 
-UNITS ONSCENE, UNITS CATEGORY, TOTAL INCIDENT DURATION, INCIDENT LENGTH, INCIDENT CATEGORY, 
-INCIDENT CATNUM, LEVEL CATEGORY
+UNITS ONSCENE, UNITS CATEGORY, TOTAL INCIDENT DURATION, INCIDENT LENGTH, 
+INCIDENT CATEGORY, INCIDENT CATNUM, LEVEL CATEGORY
 
 ## Data Analysis
 To evaluate the dataset, a univariate analysis was completed for each feature
 followed by a bivariate or multivariate to determine relationships. Univariate
-analysis consisted of value counts, bar charts of value counts, bar charts of relative
-frequency, and box plots. Bivariate and multivariate analysis consisted of
-scatterplots, crosstabs, lineplots, Pearson correlation, Chi-square, & Cramer’s V.
-The details can be viewed here on this Github within the Jupyter Notebooks.
+analysis consisted of value counts, bar charts of value counts, bar charts of 
+relative frequency, and box plots. Bivariate and multivariate analysis consisted 
+of scatterplots, crosstabs, lineplots, Pearson correlation, Chi-square, & 
+Cramer’s V. The details can be viewed here on this Github within the Jupyter 
+Notebooks.
 
 – Analysis revealed that Brooklyn is the busiest BOROUGH DESC followed by
 Manhattan. The ZIP CODE with the highest incident count is 10029, which
@@ -232,27 +235,26 @@ a weak or non existent relationship between the independent and dependent variab
 ## Implementing ML Algorithms
 Algorithms were selected based on their usability and performance with categorical
 and uncorrelated data. Random Forest, MLPClassifier (Multi-layer Perceptron
-classifier), and SGDClassifier (Stochastic Gradient Descent) were implemented
-to further determine if there were any hidden relationships and attempt
-to predict INCIDENT CATEGORY, INCIDENT LENGTH, & UNITS CATEGORY
-using ZIP CODE, BOROUGH NUM, MONTH, Hour of day, & DAY NUM.
-The data was split into an 80:20 train:test split, making the training set 1,872,331
-rows and the test set 468,083 rows. Initially, a MultiOutputClassifier was implemented
-on each algorithm since the goal was to predict three labels. This
-information can be viewed in the ML Alg MultiOut.ipynb. The accuracy of each algorithm
-on multi output was very low so each algorithm was evaluated further for single output 
-to examine the possibilities, if any.
+classifier), and SGDClassifier (Stochastic Gradient Descent) algorithms
+were implemented to determine if there were any hidden relationships and to predict
+INCIDENT CATEGORY, INCIDENT LENGTH, & UNITS CATEGORY using ZIP CODE, BOROUGH NUM, 
+MONTH, Hour of day, & DAY NUM. The data was split into an 80:20, train:test split, 
+making the training set 1,872,331 rows and the test set 468,083 rows. Initially, a 
+MultiOutputClassifier was implemented on each algorithm since the goal was to predict 
+three labels. This information can be viewed in ML Alg MultiOut.ipynb. The accuracy of 
+each algorithm on multi output was very low so each algorithm was evaluated further for 
+single output to examine the possibilities, if any.
 
 Random Forest was evaluated for a single label first due to its ability to
 extract feature importance. From this information, algorithms were further tailored to 
-the top two target features, ZIP CODE and Hour of day. Each algorithm being implemented 
-for each label individually, utilizing the top two target features. The same random
-state of 50 was used in each implementation. Accuracy, F1, precision, and recall
-were collected on the training set and summarized for evaluation. Since this is
-categorical data, certain other metrics are not available. The data is skewed for
-certain categories leading to the selection of the macro average for F1, precision,
-and recall vs weighted or micro. A display of the confusion matrix for each algorithm
-is available in addition to a classification report within the links provided.
+the top two target features, ZIP CODE and Hour of day. Each algorithm was implemented 
+for each label individually, utilizing the top two target features. The same random 
+state of 50 was used in each implementation. Accuracy, F1, precision, and recall were 
+collected on the training set and summarized for evaluation. Since this is categorical 
+data, certain other metrics are not available. The data is skewed for certain categories 
+leading to the selection of the macro average for F1, precision, and recall vs weighted 
+or micro. A display of the confusion matrix for each algorithm is available in addition 
+to a classification report within the links provided below.
 
 Details on the hyperparameters used for each algorithm are:
 
@@ -264,8 +266,7 @@ of 20 and n estimators of 200.
 
 - MLP multi was implemented with default settings. MLP on a single label
 was further refined to activation ’tanh’, solver ’adam’, alpha .05, and
-early stopping equal to True. MLP details can be viewed here: https://
-github.com/ddwalk77/FDIP/blob/main/MLPClassifier.ipynb.
+early stopping equal to True. MLP details can be viewed here inMLPClassifier.ipynb.
 
 - SGD multi was implemented with early stopping equal to True and loss
 ’modified huber’, otherwise defaults were in place. SGD on a single label was
@@ -276,22 +277,47 @@ The preliminary indication from implementations on the test data as outlined
 above was that Random Forest was the best performer. Because of this, Random
 Forest with multi-output was revisited with the two target features only
 and refined hyperparameters as outlined above, with the intention of finding a
-good fit. This is available in RandomForestMulti.ipynb. The increase in performance was 
-negligible.
+good fit. This is available in RandomForestMulti.ipynb. The increase in performance 
+was negligible.
 
+The preliminary indication from implementations on the test data as outlined
+above was that Random Forest was the best performer. Because of this, Random
+Forest with multi-output was revisited with the two target features only
+and refined hyperparameters as outlined above, with the intention of finding a
+good fit. This is available in RandomForestMulti.ipynb. The increase in performance 
+was negligible.
+
+## Analysis of Results
 In summary, as expected from the data analysis and exploration, no further
 insights were gained and accuracy is low. Results are no better than a guess of
-the top value counts which is demonstrated in RandomForest.ipynb in the confusion matrix
-predicting UNITS CATEGORY using the top two features. The confusion matrix demonstrates 
-that the algorithm is ignoring all categories except the top value count category of one. 
-As we revealed in the data analysis section, this accounts for 61.63% of the information. 
-This algorithm has an accuracy of 61.64%. It is simply matching by default. Since we are 
-not able to find a good fit due to the skew of the categories, lack of correlation, and 
-randomness of the data, test data implementation was abandoned, as a good fit could not be 
-found on the training set. A summary of the results from all the algorithms implemented is 
-in Results.ipynb
-
-## Results and Analysis
+the top value counts, which is demonstrated in the confusion matrix for Random
+Forest predicting UNITS CATEGORY using the top two features. The confusion
+matrix demonstrates that the algorithm is ignoring all categories except the
+top value count category of one. As we revealed in the data analysis section,
+this accounts for 61.63% of the information. This algorithm has an accuracy of
+61.64%. It is simply matching by default. Since we are not able to find a good fit
+due to the skew of the categories, lack of correlation, and randomness of the data,
+test data implementation was abandoned, as a good fit could not be found on the
+training set. A summary of the results from all of the algorithms implemented
+is provided in Results.ipynb. Precision is the percentage of predicted labels that 
+matched to the true labels then divided by true and false positives. False positives 
+and false negatives are not so clear in a multi classification problem. Values of the
+precision to be used are diagonal across the matrix matching 0 to 0, 1 to 1, and
+so on, then divided along the row which is true positives and the false positives.
+The row percentages from this are 61.64%, 0%, 0%, 0%, 0%, 100.00%, and 0%.
+Divided by the seven categories is the 23.09% indicated for precision. This is
+the macro average. Macro averaging is the choice due to the skewed categories
+and the decision to treat all categories the same vs weighting one higher than
+another. Recall is the percentage of predicted labels that matched to the true
+labels but instead of dividing along the row, it divides the column total, which
+is inclusive of true positives and false negatives. The column percentages are
+100.00%, 0%, 0%, 0%, 0%, 0%, and 0%. Divided by the seven categories is the
+14.29% indicated for recall. F1 combines precision and recall to provide a better
+metric than either alone. F1 scores per category are 76.27%, 0%, 0%, 0%, 0%,
+0%, and 0%. Divided by the seven categories is the 10.89% indicated for F1.
+Again, the best we are getting is a default match. This is evident in the results
+for other algorithms and settings as well. Metrics are less for each algorithm
+other than this top default match, indicating poor performance.
 
 ## Conclusion
 
