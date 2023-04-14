@@ -280,13 +280,6 @@ and refined hyperparameters as outlined above, with the intention of finding a
 good fit. This is available in RandomForestMulti.ipynb. The increase in performance 
 was negligible.
 
-The preliminary indication from implementations on the test data as outlined
-above was that Random Forest was the best performer. Because of this, Random
-Forest with multi-output was revisited with the two target features only
-and refined hyperparameters as outlined above, with the intention of finding a
-good fit. This is available in RandomForestMulti.ipynb. The increase in performance 
-was negligible.
-
 ## Analysis of Results
 In summary, as expected from the data analysis and exploration, no further
 insights were gained and accuracy is low. Results are no better than a guess of
@@ -298,7 +291,9 @@ this accounts for 61.63% of the information. This algorithm has an accuracy of
 61.64%. It is simply matching by default. Since we are not able to find a good fit
 due to the skew of the categories, lack of correlation, and randomness of the data,
 test data implementation was abandoned, as a good fit could not be found on the
-training set. A summary of the results from all of the algorithms implemented
+training set. 
+
+A summary of the results from all of the algorithms implemented
 is provided in Results.ipynb. Precision is the percentage of predicted labels that 
 matched to the true labels then divided by true and false positives. False positives 
 and false negatives are not so clear in a multi classification problem. Values of the
