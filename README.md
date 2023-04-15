@@ -12,6 +12,24 @@ S554373@nwmissouri.edu
 Report: https://www.overleaf.com/read/trcfgsnvjqds
 
 - ### Abstract
+Fire departments are considered first responders and respond
+to a multitude of incidents at any given time. The potential to predict
+incidents similar to how crime is currently predicted, could prove advantageous
+for strategic planning. Utilizing the location, date, and time,
+predictability of a broad incident type, duration, and units required, was
+examined. New York City was selected due to the amount and availability
+of information. Data from 2017 through 2021 was utilized, with sixteen
+features. The total final dataset consists of 2,340,414 records. Independent
+variables were narrowed between two and five features. Dependent
+variables were narrowed between one and three features. The data was
+analyzed to gain insights before implementing machine learning algorithms
+to further determine predictability. Through data analysis and
+further through algorithm implementation, it was discovered that location,
+data, and time is not enough information to predict a broad incident
+type, duration, and/or units required. The best result obtained from an
+algorithm was the same information extracted from descriptive analytics.
+We conclude that incidents are too random and further data would be
+needed, or a more detailed objective, to determine better predictability.
 
 - ### Keywords
 fire department · 911 dispatching · emergency · machine learning
@@ -27,7 +45,7 @@ the type of services required, and necessary equipment. Because of the diversity
 in services required by fire departments due to incident and location types,
 and additionally requiring the fastest response time, resources must be readily
 available. Resources include human resources and equipment. All incidents are
-logged through the National Fire Incident Reporting System [6] by responding
+logged through the National Fire Incident Reporting System [7] by responding
 first responders within each fire company and some larger municipalities have
 made this information readily available through their city website.
 
@@ -181,8 +199,8 @@ Notebooks.
 
 – Analysis revealed that Brooklyn is the busiest BOROUGH DESC followed by
 Manhattan. The ZIP CODE with the highest incident count is 10029, which
-is in Manhattan [8]. The second largest incident count ZIP CODE is 10456,
-which is in the Bronx [8]. The map demonstrates the incidents by
+is in Manhattan [6]. The second largest incident count ZIP CODE is 10456,
+which is in the Bronx [6]. The map demonstrates the incidents by
 ZIP CODE.
 
 – The highest LEVEL CATEGORY is one which accounts for 99.35% of the incidents.
@@ -313,41 +331,59 @@ Again, the best is a default match. This is evident in the results for other
 algorithms with other settings.
 
 ## Conclusion
+After collecting, cleaning, and analyzing New York City Fire Department incident
+information, three machine learning algorithms were used to predict future
+incident types, duration, and units needed on scene. Feature importance was
+extracted and hyperparameter tuning was applied in an effort to obtain a good
+fit. Unfortunately, a good fit could not be found. The final determination is
+that incidents at the fire department are too random to predict utilizing only
+location, date, and time. Descriptive analytics outlined in the data analysis section
+demonstrated basic patterns that can be used for staffing and equipment
+needs, but further details such as the specific type and duration of an incident, or
+the specific number of units needed, cannot be determined. Without additional
+information, the incidents appear as random as a roll of dice.
 
-- ### Limitations
-
-- ### Future Work
-Future work in this area that would add tremendous value would be incorpo-
-ration of other predictive factors that for a comprehensive prediction, such as
-crime, natural disaster, weather, and traffic data. It is also noted that more in-
-formation is collected by NFIRS than what is represented in this dataset [7]. The
-collection of a full dataset from NFIRS would allow for more thorough exami-
-nation. Initially the property type was of interest but this field was often listed
-as undetermined so it was not of use. Population is also relative to the data and
-is a considering factor that could be added to future work for further analysis.
+- ### Future Work and Limitations
+Future work in this area that would add value is the incorporation of outside
+predictive factors for a more comprehensive prediction. Datasets that could potentially
+add value pertain to crime, natural disaster, weather, census and traffic 
+data. It is also noted that more information is collected by NFIRS than what
+is represented in this dataset [8], which presents a limitation. The collection of
+a full dataset from NFIRS would allow for more thorough examination. For example,
+initially the property type was of interest but this field was often listed
+as undetermined, so it was not of use and had to be dropped. Other potentially
+useful information not always available was the presence of certain monitors and
+equipment within a building. The available data was also broadly simplified for
+project use and potentially could be predicted if detailed incident types were
+examined individually and outside data was added. For example, if only vehicle
+accidents were evaluated, and traffic data was added, the predictability is
+likely to increase. However, evaluating incidents at that level of specificity is
+time consuming which was also a limitation of this project as there is a wide
+array of specific incident types to examine. It is also noted that the initial level
+of specificity was not intended to be to that level of detail.
 
 ## References
-[1] FDNY: Incidents responded to by fire companies,
-https://data.cityofnewyork.us/Public-Safety/Incidents-Responded-to-by-Fire-Companies/tm6d-hbzd
+[1] FDNY: Incidents responded to by fire companies, https://data.cityofnewyork.us/
+Public-Safety/Incidents-Responded-to-by-Fire-Companies/tm6d-hbzd
 
-[2] Kolesar, P., Walker, W.E.: An algorithm for the dynamic relocation of fire compa-
-nies. Operations research 22(2), 249–274 (1974)
+[2] Kolesar, P., Walker, W.E.: An algorithm for the dynamic relocation of fire companies.
+Operations research 22(2), 249–274 (1974)
 
 [3] Mukhopadhyay, A., Vorobeychik, Y.: Prioritized allocation of emergency responders
 based on a continuous-time incident prediction model. In: International Conference
 on Autonomous Agents and MultiAgent Systems (2017)
 
-[4] Romero, T., Barnes, Z., Cipollone, F.: Predicting emergency incidents in san diego.
+[4] NFIC: National fire information council incident type cheat sheet, https://www.
+nfic.org/docs/IncidentTypeCheatSheet.pdf
+
+[5] Romero, T., Barnes, Z., Cipollone, F.: Predicting emergency incidents in san diego.
 CS229. Stanford School of Engineering, Tech. Rep (2017)
 
-[5] USFA: National fire incident reporting system complete reference guide,
-https://www.usfa.fema.gov/downloads/pdf/nfirs/NFIRSC ompleteRef erenceGuide2015.pdf
+[6] UnitedStatesZipCodes.org: Unitedstateszipcodes.org, https://www.
+unitedstateszipcodes.org
 
-[6] USFA: National fire incident reporting system,
-https://www.usfa.fema.gov/nfirs/
+[7] USFA: National fire incident reporting system, https://www.usfa.fema.gov/nfirs/
 
-[7] USFA: National fire incident reporting system complete reference guide,
-https://www.usfa.fema.gov/downloads/pdf/nfirs/NFIRSCompleteReferenceGuide2015.pdf
-
-[8] UnitedStatesZipCodes.org: Unitedstateszipcodes.org, 
-https://www.unitedstateszipcodes.org/
+[8] USFA: National fire incident reporting system complete reference guide, https://
+www.usfa.fema.gov/downloads/pdf/nfirs/NFIRS Complete Reference Guide 2015.
+pdf
