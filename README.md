@@ -34,11 +34,11 @@ made this information readily available through their city website.
 - ### Goals of this Research
 The goal of this research is to use municipality incident history to predict future
 incident type and required staffing for each area. This information can be useful
-to fire departments for resource allocation allowing for proper staffing and equip-
-ment availability. For each area, utilizing the historical incident date and time,
-we should be able to make predictions on future incident requirements such as
-staff and equipment needs, the type of incident, and duration. This information can
-be used to strategically place staff within the city in anticipation of an incident.
+to fire departments for resource allocation allowing for proper staffing and equipment
+availability. For each area, utilizing the historical incident date and time,
+predictions on future incident requirements such as staff and equipment needs,
+the type of incident, and duration, should be possible. This information can be
+used to strategically place staff within the city in anticipation of an incident.
 
 ## Related Work
 Like crime prediction, fire prediction has been evaluated in many municipalities
@@ -65,7 +65,7 @@ twenty-four columns and 4.16 million rows. The data is available for download
 and is 1.02GB as a .csv however it is available through an API endpoint. Initially
 data to be used from this dataset was noted as the incident type, actions taken,
 the highest level of care provided, property use, the incident date, borough, and zip
-code. The incident date will need further extraction to separate year, month and
+code. The incident date needs further extraction to separate year, month and
 hour of the day as the relevant areas to evaluate. The current format is YYYY
 MMM DD HH:MM:SS XM.
 
@@ -215,8 +215,8 @@ FALSE ALARM FALSE CALL. This is consistent across BOROUGH DESC.
 
 – Pearson correlation on numerical data indicates a correlation between the
 LEVEL CATEGORY and UNITS ONSCENE. Since the counts for both the UNITS ONSCENE
-and LEVEL CATEGORY were highest at one, this is not too insightful. We also
-see the correlation between ZIP CODE and BOROUGH DESC which is a given.
+and LEVEL CATEGORY were highest at one, this is not too insightful. There is
+also a correlation between ZIP CODE and BOROUGH DESC which is a given.
 There are also some other minor correlations between UNITS ONSCENE and
 TOTAL INCIDENT DURATION which is further demonstrated in pair plots, scatter
 plots, and crosstabs. LEVEL CATEGORY and TOTAL INCIDENT DURATION
@@ -286,12 +286,11 @@ insights were gained and accuracy is low. Results are no better than a guess of
 the top value counts, which is demonstrated in the confusion matrix for Random
 Forest predicting UNITS CATEGORY using the top two features. The confusion
 matrix demonstrates that the algorithm is ignoring all categories except the
-top value count category of one. As we revealed in the data analysis section,
-this accounts for 61.63% of the information. This algorithm has an accuracy of
-61.64%. It is simply matching by default. Since we are not able to find a good fit
-due to the skew of the categories, lack of correlation, and randomness of the data,
-test data implementation was abandoned, as a good fit could not be found on the
-training set. 
+top value count category of one. As revealed in the data analysis section, this
+accounts for 61.63% of the information. This algorithm has an accuracy of 61.64%. 
+It is simply matching by default. Since a good fit could not be found due to the 
+skew of the categories, lack of correlation, and randomness of the data, test data 
+implementation was abandoned, as a good fit could not be found on the training set. 
 
 A summary of the results from all of the algorithms implemented
 is provided in Results.ipynb. Precision is the percentage of predicted labels that 
@@ -310,9 +309,8 @@ is inclusive of true positives and false negatives. The column percentages are
 14.29% indicated for recall. F1 combines precision and recall to provide a better
 metric than either alone. F1 scores per category are 76.27%, 0%, 0%, 0%, 0%,
 0%, and 0%. Divided by the seven categories is the 10.89% indicated for F1.
-Again, the best we are getting is a default match. This is evident in the results
-for other algorithms and settings as well. Metrics are less for each algorithm
-other than this top default match, indicating poor performance.
+Again, the best is a default match. This is evident in the results for other 
+algorithms with other settings.
 
 ## Conclusion
 
