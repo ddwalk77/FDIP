@@ -32,7 +32,7 @@ We conclude that incidents are too random and further data would be
 needed, or a more detailed objective, to determine better predictability.
 
 - ### Keywords
-fire department · 911 dispatching · emergency · machine learning
+fire department · 911 dispatching · emergency · machine learning · first responder
 
 ## Introduction
 Fire departments are not only composed of fire fighters that fight fires, but EMT,
