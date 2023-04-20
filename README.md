@@ -45,7 +45,7 @@ the type of services required, and necessary equipment. Because of the diversity
 in services required by fire departments due to incident and location types,
 and additionally requiring the fastest response time, resources must be readily
 available. Resources include human resources and equipment. All incidents are
-logged through the National Fire Incident Reporting System [7] by responding
+logged through the National Fire Incident Reporting System [9] by responding
 first responders within each fire company and some larger municipalities have
 made this information readily available through their city website.
 
@@ -63,17 +63,17 @@ Like crime prediction, fire prediction has been evaluated in many municipalities
 using several different algorithms for different purposes. FDNY has long been
 in the practice, like many urban fire departments, of temporarily relocating
 services between fire houses when they are overwhelmed by incidents to ensure
-availability for future anticipated incidents[2]. This information was evaluated to
+availability for future anticipated incidents[4]. This information was evaluated to
 formulate dynamic staffing using algorithms. Data from the San Diego, CA area
 was analyzed by a group at Stanford for predicting emergency incidents as a
 project [5]. This work included detailed location information using latitude and
 longitude, weather, and demographics of the area. A project out of Vanderbilt
 evaluated data from Nashville, TN focusing on the incident severity as a main
-factor to prioritize resources, traffic factors, and arrival times [3].
+factor to prioritize resources, traffic factors, and arrival times [5].
 
 ## Data Collection
 Data was obtained for this project through the City of New York open data site
-[1] and is structured. It consists of seventeen categorical data types, fifteen of
+[2] and is structured. It consists of seventeen categorical data types, fifteen of
 which are nominal and two that are ordinal along with seven numerical data
 types, three of which are continuous and four that are discrete. As of the time
 of writing this, the data was last updated April 8, 2022, with the initial creation
@@ -199,9 +199,14 @@ Notebooks.
 
 – Analysis revealed that Brooklyn is the busiest BOROUGH DESC followed by
 Manhattan. The ZIP CODE with the highest incident count is 10029, which
-is in Manhattan [6]. The second largest incident count ZIP CODE is 10456,
-which is in the Bronx [6]. The map demonstrates the incidents by
-ZIP CODE.
+is in Manhattan [8]. The second largest incident count ZIP CODE is 10456,
+which is in the Bronx [8]. This is interesting since it not in the two busiest
+boroughs. The map below demonstrates the incidents by ZIP CODE. Python’s
+folium library was used and the code for this can be viewed at https://github.
+com/ddwalk77/FDIP/blob/main/FDIP Map.ipynb. A baseline for this code
+was obtained from:
+https://www.einblick.ai/tools/folium-create-leafletjs-maps-in-python/[3].
+The New York zip code json used in this code was obtained on Github [1].
 
 – The highest LEVEL CATEGORY is one which accounts for 99.35% of the incidents.
 
@@ -272,7 +277,8 @@ collected on the training set and summarized for evaluation. Since this is categ
 data, certain other metrics are not available. The data is skewed for certain categories 
 leading to the selection of the macro average for F1, precision, and recall vs weighted 
 or micro. A display of the confusion matrix for each algorithm is available in addition 
-to a classification report within the links provided below.
+to a classification report within the links provided below. This helps visually 
+demonstrate the true and predicted labels.
 
 Details on the hyperparameters used for each algorithm are:
 
@@ -300,10 +306,11 @@ was negligible.
 
 ## Analysis of Results
 In summary, as expected from the data analysis and exploration, no further
-insights were gained and accuracy is low. Results are no better than a guess of
-the top value counts, which is demonstrated in the confusion matrix for Random
-Forest predicting UNITS CATEGORY using the top two features. The confusion
-matrix demonstrates that the algorithm is ignoring all categories except the
+insights were gained and accuracy is low. Accuracy expectation would be at
+least 90% to ensure we are not matching by default, preferably higher.Results are no 
+better than a guess of the top value counts, which is demonstrated in the confusion 
+matrix for Random Forest predicting UNITS CATEGORY using the top two features. The 
+confusion matrix demonstrates that the algorithm is ignoring all categories except the
 top value count category of one. As revealed in the data analysis section, this
 accounts for 61.63% of the information. This algorithm has an accuracy of 61.64%. 
 It is simply matching by default. Since a good fit could not be found due to the 
@@ -348,7 +355,7 @@ Future work in this area that would add value is the incorporation of outside
 predictive factors for a more comprehensive prediction. Datasets that could potentially
 add value pertain to crime, natural disaster, weather, census and traffic 
 data. It is also noted that more information is collected by NFIRS than what
-is represented in this dataset [8], which presents a limitation. The collection of
+is represented in this dataset [10], which presents a limitation. The collection of
 a full dataset from NFIRS would allow for more thorough examination. For example,
 initially the property type was of interest but this field was often listed
 as undetermined, so it was not of use and had to be dropped. Other potentially
@@ -363,27 +370,33 @@ array of specific incident types to examine. It is also noted that the initial l
 of specificity was not intended to be to that level of detail.
 
 ## References
-[1] FDNY: Incidents responded to by fire companies, https://data.cityofnewyork.us/
+[1] enactdev: ny new york zip codes, https://github.com/OpenDataDE/
+State-zip-code-GeoJSON
+
+[2] FDNY: Incidents responded to by fire companies, https://data.cityofnewyork.us/
 Public-Safety/Incidents-Responded-to-by-Fire-Companies/tm6d-hbzd
 
-[2] Kolesar, P., Walker, W.E.: An algorithm for the dynamic relocation of fire companies.
+[3] Einblick Analytics Inc: folium: create leaflet.js maps in python, https://www.einblick.ai/tools/
+folium-create-leafletjs-maps-in-python/
+
+[4] Kolesar, P., Walker, W.E.: An algorithm for the dynamic relocation of fire companies.
 Operations research 22(2), 249–274 (1974)
 
-[3] Mukhopadhyay, A., Vorobeychik, Y.: Prioritized allocation of emergency responders
+[5] Mukhopadhyay, A., Vorobeychik, Y.: Prioritized allocation of emergency responders
 based on a continuous-time incident prediction model. In: International Conference
 on Autonomous Agents and MultiAgent Systems (2017)
 
-[4] NFIC: National fire information council incident type cheat sheet, https://www.
+[6] NFIC: National fire information council incident type cheat sheet, https://www.
 nfic.org/docs/IncidentTypeCheatSheet.pdf
 
-[5] Romero, T., Barnes, Z., Cipollone, F.: Predicting emergency incidents in san diego.
+[7] Romero, T., Barnes, Z., Cipollone, F.: Predicting emergency incidents in san diego.
 CS229. Stanford School of Engineering, Tech. Rep (2017)
 
-[6] UnitedStatesZipCodes.org: Unitedstateszipcodes.org, https://www.
+[8] UnitedStatesZipCodes.org: Unitedstateszipcodes.org, https://www.
 unitedstateszipcodes.org
 
-[7] USFA: National fire incident reporting system, https://www.usfa.fema.gov/nfirs/
+[9] USFA: National fire incident reporting system, https://www.usfa.fema.gov/nfirs/
 
-[8] USFA: National fire incident reporting system complete reference guide, https://
+[10] USFA: National fire incident reporting system complete reference guide, https://
 www.usfa.fema.gov/downloads/pdf/nfirs/NFIRS Complete Reference Guide 2015.
 pdf
