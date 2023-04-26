@@ -23,7 +23,7 @@ features. The total final dataset consists of 2,340,414 records. Independent
 variables were narrowed between two and five features. Dependent
 variables were narrowed between one and three features. The data was
 analyzed to gain insights before implementing machine learning algorithms
-to further determine predictability. Through data analysis and
+to further determine predictability. Through data analysis, and
 further through algorithm implementation, it was discovered that location,
 data, and time is not enough information to predict a broad incident
 type, duration, and/or units required. The best result obtained from an
