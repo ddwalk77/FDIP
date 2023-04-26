@@ -207,6 +207,7 @@ com/ddwalk77/FDIP/blob/main/FDIP Map.ipynb. A baseline for this code
 was obtained from:
 https://www.einblick.ai/tools/folium-create-leafletjs-maps-in-python/[3].
 The New York zip code json used in this code was obtained on Github [1].
+![NYC Incident Zip Code Map](https://github.com/ddwalk77/FDIP/blob/main/NYCMAP.png)
 
 – The highest LEVEL CATEGORY is one which accounts for 99.35% of the incidents.
 
@@ -277,8 +278,8 @@ collected on the training set and summarized for evaluation. Since this is categ
 data, certain other metrics are not available. The data is skewed for certain categories 
 leading to the selection of the macro average for F1, precision, and recall vs weighted 
 or micro. A display of the confusion matrix for each algorithm is available in addition 
-to a classification report within the links provided below. This helps visually 
-demonstrate the true and predicted labels.
+to a classification report within the links provided below. The confusion matrices 
+visually demonstrate the true and predicted labels for the categories.
 
 Details on the hyperparameters used for each algorithm are:
 
@@ -302,40 +303,53 @@ above was that Random Forest was the best performer. Because of this, Random
 Forest with multi-output was revisited with the two target features only
 and refined hyperparameters as outlined above, with the intention of finding a
 good fit. This is available in RandomForestMulti.ipynb. The increase in performance 
-was negligible.
+was negligible. As we can see in the confusion matrices on the individual labels, the 
+algorithms lack predictions other than in one or two categories. This demonstrates that 
+the algorithms are using the highest value counts and matching by default.
 
 ## Analysis of Results
-In summary, as expected from the data analysis and exploration, no further
-insights were gained and accuracy is low. Accuracy expectation would be at
-least 90% to ensure we are not matching by default, preferably higher.Results are no 
-better than a guess of the top value counts, which is demonstrated in the confusion 
-matrix for Random Forest predicting UNITS CATEGORY using the top two features. The 
-confusion matrix demonstrates that the algorithm is ignoring all categories except the
-top value count category of one. As revealed in the data analysis section, this
-accounts for 61.63% of the information. This algorithm has an accuracy of 61.64%. 
-It is simply matching by default. Since a good fit could not be found due to the 
-skew of the categories, lack of correlation, and randomness of the data, test data 
-implementation was abandoned, as a good fit could not be found on the training set. 
+In summary, as expected from the data analysis and exploration, no further insights
+were gained and accuracy is low. Accuracy expectation would be at least 90% to ensure 
+we are not matching by default, preferably higher. Results are no better than a guess 
+of the top value counts, which is demonstrated in the confusion matrix for Random 
+Forest predicting UNITS CATEGORY using the top two features. The confusion matrix 
+demonstrates that the algorithm is ignoring all categories except the top value count 
+category of one. As revealed in the data analysis section, the top value count category 
+of one is 61.63% of information. This algorithm has an accuracy of 61.64%, therefore the 
+conclusion is that the algorithm is simply matching by default. Since a good fit could 
+not be found due to the skew of the categories, lack of correlation, and randomness of 
+the data, test data implementation was abandoned, as a good fit could not be found on 
+the training set.
 
-A summary of the results from all of the algorithms implemented
-is provided in Results.ipynb. Precision is the percentage of predicted labels that 
-matched to the true labels then divided by true and false positives. False positives 
-and false negatives are not so clear in a multi classification problem. Values of the
-precision to be used are diagonal across the matrix matching 0 to 0, 1 to 1, and
-so on, then divided along the row which is true positives and the false positives.
-The row percentages from this are 61.64%, 0%, 0%, 0%, 0%, 100.00%, and 0%.
-Divided by the seven categories is the 23.09% indicated for precision. This is
-the macro average. Macro averaging is the choice due to the skewed categories
-and the decision to treat all categories the same vs weighting one higher than
-another. Recall is the percentage of predicted labels that matched to the true
-labels but instead of dividing along the row, it divides the column total, which
-is inclusive of true positives and false negatives. The column percentages are
-100.00%, 0%, 0%, 0%, 0%, 0%, and 0%. Divided by the seven categories is the
-14.29% indicated for recall. F1 combines precision and recall to provide a better
-metric than either alone. F1 scores per category are 76.27%, 0%, 0%, 0%, 0%,
-0%, and 0%. Divided by the seven categories is the 10.89% indicated for F1.
-Again, the best is a default match. This is evident in the results for other 
-algorithms with other settings.
+A summary of the results from all of the algorithms implemented is provided in 
+Results.ipynb. Precision is the percentage of predicted labels that matched to the true 
+labels then divided by true and false positives. False positives and false negatives
+are not so clear in a multi classification problem. Values of the precision to be
+used are diagonal across the matrix matching 0 to 0, 1 to 1, and so on, then
+divided along the row which is true positives and the false positives. The row
+percentages from this are 61.64%, 0%, 0%, 0%, 0%, 100.00%, and 0%. Again, here
+we see the default match to the top category of one which accounted for 61.63%
+of the data. The confusion matrix visually demonstrates the selection of category
+one for all but one incident and is also indicated here in precision. Divided by the
+seven categories is the 23.09% indicated for precision. This is the macro average.
+Macro averaging is the choice due to the skewed categories and the decision to
+treat all categories the same vs weighting one higher than another. Recall is the
+percentage of predicted labels that matched to the true labels but instead of
+dividing along the row, it divides the column total, which is inclusive of true
+positives and false negatives. The column percentages are 100.00%, 0%, 0%, 0%,
+0%, 0%, and 0%. Category one matched 100.00% but it is also accounts for all
+predictions except one. Divided by the seven categories is the 14.29% indicated
+for recall. F1 combines precision and recall to provide a better metric than either
+alone. F1 scores per category are 76.27%, 0%, 0%, 0%, 0%, 0%, and 0%. Divided
+by the seven categories is the 10.89% indicated for F1. As demonstrated here for
+this algorithm, the results indicate a default match. This is evident in the results
+for other algorithms with other settings as well in their respective notebooks as
+referenced previously, but was most prevalent in the algorithm just discussed,
+Random Forest predicting UNITS CATEGORY using the top two features. We
+conclude that since evidence is present of default matching by accuracy being
+less than or equal to default matches, and not meeting the goal of at least 90%,
+that a good fit could not be found and predictability is not possible with existing
+information.
 
 ## Conclusion
 After collecting, cleaning, and analyzing New York City Fire Department incident
