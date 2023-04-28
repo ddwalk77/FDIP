@@ -21,12 +21,12 @@ examined. New York City was selected due to the amount and availability
 of information. Data from 2017 through 2021 was utilized, with sixteen
 features. The total final dataset consists of 2,340,414 records. Independent
 variables were narrowed between two and five features. Dependent
-variables were narrowed between one and three features. The data was
-analyzed to gain insights before implementing machine learning algorithms
+variables were narrowed between one and three features. Descriptive
+analytics were employed before implementing machine learning algorithms
 to further determine predictability. Through data analysis, and
 further through algorithm implementation, it was discovered that location,
 data, and time is not enough information to predict a broad incident
-type, duration, and/or units required. The best result obtained from an
+type, duration, and/or units required on scene. The best result obtained from an
 algorithm was the same information extracted from descriptive analytics.
 We conclude that incidents are too random and further data would be
 needed, or a more detailed objective, to determine better predictability.
@@ -279,7 +279,8 @@ data, certain other metrics are not available. The data is skewed for certain ca
 leading to the selection of the macro average for F1, precision, and recall vs weighted 
 or micro. A display of the confusion matrix for each algorithm is available in addition 
 to a classification report within the links provided below. The confusion matrices 
-visually demonstrate the true and predicted labels for the categories.
+visually demonstrate the true and predicted labels for the categories, however as will 
+be demonstrated below, they are simply showing default matches to the highest value counts.
 
 Details on the hyperparameters used for each algorithm are:
 
