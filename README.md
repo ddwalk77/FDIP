@@ -80,7 +80,7 @@ of writing this, the data was last updated April 8, 2022, with the initial creat
 on July 27, 2016, and is updated annually. It includes all incidents overseen
 by fire companies including fire, medical and non-fire emergencies. It contains
 twenty-four columns and 4.16 million rows. The data is available for download
-and is 1.02GB as a .csv however it is available through an API endpoint. Initially
+and is 1.02GB as a .csv however it is also available through an API endpoint. Initially
 data to be used from this dataset was noted as the incident type, actions taken,
 the highest level of care provided, property use, the incident date, borough, and zip
 code. The incident date needs further extraction to separate year, month and
@@ -242,7 +242,7 @@ LEVEL CATEGORY and UNITS ONSCENE. Since the counts for both the UNITS ONSCENE
 and LEVEL CATEGORY were highest at one, this is not too insightful. There is
 also a correlation between ZIP CODE and BOROUGH DESC which is a given.
 There are also some other minor correlations between UNITS ONSCENE and
-TOTAL INCIDENT DURATION which is further demonstrated in pair plots, scatter
+TOTAL INCIDENT DURATION, which is further demonstrated in pair plots, scatter
 plots, and crosstabs. LEVEL CATEGORY and TOTAL INCIDENT DURATION
 also show a minor correlation. Since the LEVEL CATEGORY for level one was
 99.35%, this is not too insightful either.
@@ -254,7 +254,7 @@ that it not indicated above.
 between INCIDENT CATEGORY and UNITS CATEGORY. Cramer’s V was .32.
 
 In summary, lots of descriptive information was extracted, however there is only 
-a weak or non existent relationship between the independent and dependent variables. 
+a weak or non-existent relationship between the independent and dependent variables. 
 
 ## Implementing ML Algorithms
 Algorithms were selected based on their usability and performance with categorical
@@ -381,7 +381,7 @@ accidents were evaluated, and traffic data was added, the predictability is
 likely to increase. However, evaluating incidents at that level of specificity is
 time consuming which was also a limitation of this project as there is a wide
 array of specific incident types to examine. It is also noted that the initial level
-of specificity was not intended to be to that level of detail.
+of specificity for this project was not intended to be to that level of detail.
 
 ## References
 [1] enactdev: ny new york zip codes, https://github.com/OpenDataDE/
