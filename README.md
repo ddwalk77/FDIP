@@ -311,9 +311,10 @@ the algorithms are using the highest value counts and matching by default.
 ## Analysis of Results
 In summary, as expected from the data analysis and exploration, no further insights
 were gained and accuracy is low. Accuracy expectation would be at least 90% to ensure 
-we are not matching by default, preferably higher. Results are no better than a guess 
-of the top value counts, which is demonstrated in the confusion matrix for Random 
-Forest predicting UNITS CATEGORY using the top two features. The confusion matrix 
+we are not matching by default, preferably higher. A summary of the results from all 
+of the algorithms implemented is provided in Results.ipynb. Results are no better than 
+a guess of the top value counts, which is best demonstrated in the confusion matrix for 
+Random Forest predicting UNITS CATEGORY using the top two features. The confusion matrix 
 demonstrates that the algorithm is ignoring all categories except the top value count 
 category of one. As revealed in the data analysis section, the top value count category 
 of one is 61.63% of information. This algorithm has an accuracy of 61.64%, therefore the 
@@ -322,8 +323,11 @@ not be found due to the skew of the categories, lack of correlation, and randomn
 the data, test data implementation was abandoned, as a good fit could not be found on 
 the training set.
 
-A summary of the results from all of the algorithms implemented is provided in 
-Results.ipynb. Precision is the percentage of predicted labels that matched to the true 
+Looking deeper, the details of Random Forest predicting UNITS_CATEGORY are provided
+here. 
+![Random Forest metrics per category](https://github.com/ddwalk77/FDIP/blob/main/RFMetrics.png)
+
+Precision is the percentage of predicted labels that matched to the true 
 labels then divided by true and false positives. False positives and false negatives
 are not so clear in a multi classification problem. Values of the precision to be
 used are diagonal across the matrix matching 0 to 0, 1 to 1, and so on, then
