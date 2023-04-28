@@ -66,14 +66,14 @@ services between fire houses when they are overwhelmed by incidents to ensure
 availability for future anticipated incidents[4]. This information was evaluated to
 formulate dynamic staffing using algorithms. Data from the San Diego, CA area
 was analyzed by a group at Stanford for predicting emergency incidents as a
-project [5]. This work included detailed location information using latitude and
+project [7]. This work included detailed location information using latitude and
 longitude, weather, and demographics of the area. A project out of Vanderbilt
 evaluated data from Nashville, TN focusing on the incident severity as a main
 factor to prioritize resources, traffic factors, and arrival times [5].
 
 ## Data Collection
 Data was obtained for this project through the City of New York open data site
-[2] and is structured. It consists of seventeen categorical data types, fifteen of
+[3] and is structured. It consists of seventeen categorical data types, fifteen of
 which are nominal and two that are ordinal along with seven numerical data
 types, three of which are continuous and four that are discrete. As of the time
 of writing this, the data was last updated April 8, 2022, with the initial creation
@@ -205,8 +205,8 @@ boroughs. The map below demonstrates the incidents by ZIP CODE. Python’s
 folium library was used and the code for this can be viewed at https://github.
 com/ddwalk77/FDIP/blob/main/FDIP Map.ipynb. A baseline for this code
 was obtained from:
-https://www.einblick.ai/tools/folium-create-leafletjs-maps-in-python/[3].
-The New York zip code json used in this code was obtained on Github [1].
+https://www.einblick.ai/tools/folium-create-leafletjs-maps-in-python/[1].
+The New York zip code json used in this code was obtained on Github [2].
 ![NYC Incident Zip Code Map](https://github.com/ddwalk77/FDIP/blob/main/NYCMAP.png)
 
 – The highest LEVEL CATEGORY is one which accounts for 99.35% of the incidents.
